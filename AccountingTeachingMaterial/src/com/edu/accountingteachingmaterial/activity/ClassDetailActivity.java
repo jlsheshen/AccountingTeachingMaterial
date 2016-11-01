@@ -5,12 +5,12 @@ import android.os.Bundle;
 import com.edu.accountingteachingmaterial.R;
 import com.edu.accountingteachingmaterial.base.BaseActivity;
 
-public class ClassActivity  extends BaseActivity{
+public class ClassDetailActivity  extends BaseActivity{
 
 	@Override
 	public int setLayout() {
 		// TODO Auto-generated method stub
-		return R.layout.activity_class;
+		return R.layout.activity_class_detail;
 	}
 
 	@Override

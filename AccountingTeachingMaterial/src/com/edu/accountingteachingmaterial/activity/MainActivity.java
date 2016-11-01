@@ -17,11 +17,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 import android.widget.ExpandableListView.OnChildClickListener;
 
 
 public class MainActivity extends BaseActivity {
+	
 	ExpandableListView expandableListView;
 	List<ClassChapterBean> datas;
 	ClassChapterExLvAdapter chapterExLvAdapter;
@@ -49,7 +49,7 @@ public class MainActivity extends BaseActivity {
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 				String id1 =  datas.get(groupPosition).getNodes().get(childPosition).getNodeId();
 				Log.e("www", id1);
-				startActivity(ClassActivity.class);
+				startActivity(ClassDetailActivity.class);
 				// TODO Auto-generated method stub
 				return false;
 			}
