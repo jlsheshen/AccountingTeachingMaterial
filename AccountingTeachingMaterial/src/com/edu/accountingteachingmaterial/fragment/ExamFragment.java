@@ -7,8 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
-import android.widget.ExpandableListView.OnGroupExpandListener;
-import android.widget.RadioGroup;
 
 import com.edu.accountingteachingmaterial.R;
 import com.edu.accountingteachingmaterial.activity.ClassDetailActivity;
@@ -17,12 +15,11 @@ import com.edu.accountingteachingmaterial.base.BaseFragment;
 import com.edu.accountingteachingmaterial.bean.ClassChapterBean;
 import com.edu.accountingteachingmaterial.bean.NodeBean;
 
-public class ClassFragment  extends BaseFragment{
-
+public class ExamFragment extends BaseFragment {
+	
 	ExpandableListView expandableListView;
 	List<ClassChapterBean> datas;
 	ClassChapterExLvAdapter chapterExLvAdapter;
-	RadioGroup dGroup;
 
 	@Override
 	protected int initLayout() {
@@ -52,17 +49,6 @@ public class ClassFragment  extends BaseFragment{
 				return false;
 			}
 		});
-		
-		expandableListView.setOnGroupExpandListener(new OnGroupExpandListener() {
-            @Override
-            public void onGroupExpand(int groupPosition) {
-                for (int i = 0, count = expandableListView .getExpandableListAdapter().getGroupCount(); i < count; i++) {
-                    if (groupPosition != i) {// 关闭其他分组
-                    	expandableListView.collapseGroup(i);
-                    }
-                }
-            }
-        });
 		}
 	private void loadData() {
 		datas = new ArrayList<>();
@@ -83,10 +69,7 @@ public class ClassFragment  extends BaseFragment{
 			datas.add(chapterBean);
 
 		}
+		// TODO Auto-generated method stub
 
 	}
-
-
-	}
-
-
+}

@@ -1,80 +1,105 @@
 package com.edu.accountingteachingmaterial.activity;
 
 
-
-
-import java.util.ArrayList;
-import java.util.List;
-
 import com.edu.accountingteachingmaterial.R;
-import com.edu.accountingteachingmaterial.adapter.ClassChapterExLvAdapter;
 import com.edu.accountingteachingmaterial.base.BaseActivity;
-import com.edu.accountingteachingmaterial.bean.ClassChapterBean;
-import com.edu.accountingteachingmaterial.bean.NodeBean;
+import com.edu.accountingteachingmaterial.fragment.ClassFragment;
+import com.edu.accountingteachingmaterial.fragment.ExamFragment;
+import com.edu.accountingteachingmaterial.fragment.MyFragment;
 import com.edu.library.util.ToastUtil;
 
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ExpandableListView;
-import android.widget.ExpandableListView.OnChildClickListener;
+import android.view.View.OnClickListener;
+import android.widget.PopupWindow;
+import android.widget.RadioButton;
+
+public class MainActivity extends BaseActivity implements OnClickListener {
 
 
-public class MainActivity extends BaseActivity {
-	
-	ExpandableListView expandableListView;
-	List<ClassChapterBean> datas;
-	ClassChapterExLvAdapter chapterExLvAdapter;
+	RadioButton classButton,examButton, myButton, settingButton;
+	Fragment classFragment,examFragment,myFragment;
+
 	@Override
 	public int setLayout() {
 		// TODO Auto-generated method stub
 		return R.layout.activity_main;
 	}
+
 	@Override
 	public void initView(Bundle savedInstanceState) {
-		expandableListView = (ExpandableListView) bindView(R.id.main_classchapter_exlv);
-		
+		bindAndListener(classButton, R.id.main_class_iv);
+		bindAndListener(examButton, R.id.main_exam_iv);
+		bindAndListener(myButton, R.id.main_my_iv);
+		bindAndListener(settingButton, R.id.main_setting_iv);
+
+
 		// TODO Auto-generated method stub
-		
+
 	}
+
 	@Override
 	public void initData() {
-		loadData();
-		chapterExLvAdapter = new ClassChapterExLvAdapter(this);
-		chapterExLvAdapter.setDatas(datas);
-		expandableListView.setAdapter(chapterExLvAdapter);
-		expandableListView.setOnChildClickListener(new OnChildClickListener() {
-			
-			@Override
-			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-				String id1 =  datas.get(groupPosition).getNodes().get(childPosition).getNodeId();
-				Log.e("www", id1);
-				startActivity(ClassDetailActivity.class);
-				// TODO Auto-generated method stub
-				return false;
-			}
-		});
-	
+		if (null == classFragment) {
+			classFragment = new ClassFragment();
+        }
+		replaceFragment(classFragment );
+
+		
+		
+
 	}
-	private void loadData() {
-		datas = new ArrayList<>();
-		for (int i = 0; i < 10; i++) {
-			ClassChapterBean chapterBean = new ClassChapterBean();
-			List<NodeBean>  nodes = new ArrayList<>();
-			chapterBean.setChapterId(i);
-			chapterBean.setTitle("章节标题 编号--" + i);
-			for (int j = 0; j < 10; j++) {
-				NodeBean node =  new NodeBean();
-				
-				node.setNodeId(i + "--" + j);
-				node.setTitle("小节编号" + node.getNodeId());
-				nodes.add(node);
-				
-			}
-			chapterBean.setNodes(nodes);
-			datas.add(chapterBean);
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.main_class_iv:
+			if (null == classFragment) {
+				classFragment = new ClassFragment();
+            }
+			replaceFragment(classFragment );
+           
+			break;
+		case R.id.main_exam_iv:
+			if (null == examFragment) {
+				examFragment = new ExamFragment();
+            }
+			replaceFragment(examFragment );
+			
+			break;
+		case R.id.main_my_iv:
+			if (null == myFragment) {
+				myFragment = new MyFragment();
+            }
+			replaceFragment(myFragment );
+
+			break;
+		case R.id.main_setting_iv:
+
+			break;
 		}
 		// TODO Auto-generated method stub
+
+	}
+
+
+	private void replaceFragment(Fragment fragment) {
+		FragmentTransaction transaction  =  getSupportFragmentManager().beginTransaction();
+         transaction.replace(R.id.main_aty_view,fragment);             
+         // Commit the transaction
+         transaction.commit();
 		
 	}
+
+	private void bindAndListener(View view, int id) {
+		view = bindView(id);
+		view.setOnClickListener(this);
+	}
+
+
+
+
+	
 }
