@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 import com.edu.accountingteachingmaterial.R;
 import com.edu.accountingteachingmaterial.base.BaseActivity;
 import com.edu.accountingteachingmaterial.fragment.ClassEmphasisFragment;
+import com.edu.accountingteachingmaterial.fragment.ClassExampleFragment;
 import com.edu.accountingteachingmaterial.fragment.ClassFragment;
 
 public class ClassDetailActivity extends BaseActivity implements OnClickListener {
@@ -71,7 +72,7 @@ public class ClassDetailActivity extends BaseActivity implements OnClickListener
 
 		case R.id.class_example_iv:
 			if (null == classExampleFragment) {
-				classExampleFragment = new ClassFragment();
+				classExampleFragment = new ClassExampleFragment();
             }
 			replaceFragment(classExampleFragment );
 			break;

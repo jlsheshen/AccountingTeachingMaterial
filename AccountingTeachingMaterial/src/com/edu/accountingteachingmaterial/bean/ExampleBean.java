@@ -9,6 +9,7 @@ public class ExampleBean extends BaseData{
 	String name;
 	
 	String url;
+	
 
 	public int getType() {
 		return type;

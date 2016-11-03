@@ -5,8 +5,7 @@ import android.webkit.WebView;
 
 import com.edu.accountingteachingmaterial.R;
 import com.edu.accountingteachingmaterial.base.BaseFragment;
-
-import constant.URLConstant;
+import com.edu.accountingteachingmaterial.constant.UriConstant;
 
 public class ClassEmphasisFragment  extends BaseFragment{
 	 WebView wView;
@@ -20,7 +19,7 @@ public class ClassEmphasisFragment  extends BaseFragment{
 	protected void initView(View view) {
 
 		 wView = bindView(R.id.emphasis_wv);
-		 wView.loadUrl(URLConstant.filePath + "san360.html");		
+		 wView.loadUrl(UriConstant.FILE_PATH+ "san360.html");		
 	}
 
 	@Override
