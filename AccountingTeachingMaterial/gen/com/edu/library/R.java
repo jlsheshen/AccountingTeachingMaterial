@@ -234,21 +234,21 @@ public final class R {
 		public static final int file = 0x7f030022;
 		public static final int image_group_item = 0x7f030028;
 		public static final int image_list_item = 0x7f030029;
-		public static final int item_guidance_page = 0x7f03002b;
-		public static final int item_masonry = 0x7f03002e;
-		public static final int item_show_pics_page = 0x7f03002f;
-		public static final int layout_img_task = 0x7f030030;
-		public static final int layout_item_clickable = 0x7f030031;
-		public static final int layout_loading_imageview = 0x7f030032;
-		public static final int layout_upgrade_dialog = 0x7f030033;
-		public static final int layout_zoomable_loading_imageview = 0x7f030034;
-		public static final int load_more = 0x7f030035;
-		public static final int loading_layout = 0x7f030036;
-		public static final int nofification_update_app = 0x7f030037;
-		public static final int popup_menu_item = 0x7f030038;
-		public static final int popup_menu_layout = 0x7f030039;
-		public static final int popup_pic_select = 0x7f03003a;
-		public static final int refresh_head = 0x7f03003c;
+		public static final int item_guidance_page = 0x7f03002c;
+		public static final int item_masonry = 0x7f03002f;
+		public static final int item_show_pics_page = 0x7f030030;
+		public static final int layout_img_task = 0x7f030031;
+		public static final int layout_item_clickable = 0x7f030032;
+		public static final int layout_loading_imageview = 0x7f030033;
+		public static final int layout_upgrade_dialog = 0x7f030034;
+		public static final int layout_zoomable_loading_imageview = 0x7f030035;
+		public static final int load_more = 0x7f030036;
+		public static final int loading_layout = 0x7f030037;
+		public static final int nofification_update_app = 0x7f030038;
+		public static final int popup_menu_item = 0x7f030039;
+		public static final int popup_menu_layout = 0x7f03003a;
+		public static final int popup_pic_select = 0x7f03003b;
+		public static final int refresh_head = 0x7f03003d;
 	}
 	public static final class menu {
 		public static final int main = 0x7f0d0000;

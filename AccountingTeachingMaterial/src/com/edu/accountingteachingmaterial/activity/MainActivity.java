@@ -8,20 +8,25 @@ import com.edu.accountingteachingmaterial.fragment.ExamFragment;
 import com.edu.accountingteachingmaterial.fragment.MyFragment;
 import com.edu.library.util.ToastUtil;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.DrawerLayout.DrawerListener;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 
-public class MainActivity extends BaseActivity implements OnClickListener {
+public class MainActivity extends BaseActivity implements OnClickListener, DrawerListener {
 
 
 	RadioButton classButton,examButton, myButton, settingButton;
 	Fragment classFragment,examFragment,myFragment;
+	DrawerLayout drawerLayout;
 
 	@Override
 	public int setLayout() {
@@ -35,7 +40,8 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		bindAndListener(examButton, R.id.main_exam_iv);
 		bindAndListener(myButton, R.id.main_my_iv);
 		bindAndListener(settingButton, R.id.main_setting_iv);
-
+		drawerLayout = bindView(R.id.main_aty_seeting);
+		
 
 		// TODO Auto-generated method stub
 
@@ -77,6 +83,14 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
 			break;
 		case R.id.main_setting_iv:
+			
+	           drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+
+               drawerLayout.setDrawerListener(this);
+               //从左侧划出
+               drawerLayout.openDrawer(Gravity.LEFT);
+               //取消背景颜色
+        //       drawerLayout.setScrimColor(Color.TRANSPARENT);
 
 			break;
 		}
@@ -96,6 +110,30 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	private void bindAndListener(View view, int id) {
 		view = bindView(id);
 		view.setOnClickListener(this);
+	}
+
+	@Override
+	public void onDrawerClosed(View arg0) {
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+		
+	}
+
+	@Override
+	public void onDrawerOpened(View arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onDrawerSlide(View arg0, float arg1) {
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+		
+	}
+
+	@Override
+	public void onDrawerStateChanged(int arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

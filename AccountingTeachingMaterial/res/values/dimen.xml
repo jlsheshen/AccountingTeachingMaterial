@@ -7,8 +7,9 @@
     <dimen name="side_bar_width">80dp</dimen>
     <dimen name="gv_card_imageview">200dp</dimen>
     <dimen name="card_width_padding">20dp</dimen>
-        <dimen name="drawlayout_width">200dp</dimen>
-        <dimen name="my_head_card_height">120dp</dimen>
+    <dimen name="drawlayout_width">200dp</dimen>
+    <dimen name="my_head_card_height">120dp</dimen>
     
+    <dimen name="horizontal_lin_padding">10dp</dimen>
 
 </resources>

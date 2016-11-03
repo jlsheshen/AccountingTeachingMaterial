@@ -971,6 +971,7 @@ containing a value of this type.
         public static final int card_width_padding=0x7f080022;
         public static final int drawlayout_width=0x7f080023;
         public static final int gv_card_imageview=0x7f080021;
+        public static final int horizontal_lin_padding=0x7f080025;
         public static final int item_text_size=0x7f08001e;
         public static final int list_item_padding=0x7f08001c;
         /**  文件选择器 
@@ -1257,13 +1258,13 @@ containing a value of this type.
         public static final int loadmore_view=0x7f0a0092;
         public static final int loadstate_iv=0x7f0a0097;
         public static final int loadstate_tv=0x7f0a0096;
-        public static final int main_aty_pager=0x7f0a0065;
+        public static final int main_aty_seeting=0x7f0a0060;
         public static final int main_aty_title_layout=0x7f0a0057;
-        public static final int main_aty_view=0x7f0a0064;
-        public static final int main_class_iv=0x7f0a0061;
-        public static final int main_exam_iv=0x7f0a0060;
-        public static final int main_my_iv=0x7f0a0062;
-        public static final int main_setting_iv=0x7f0a0063;
+        public static final int main_aty_view=0x7f0a0065;
+        public static final int main_class_iv=0x7f0a0062;
+        public static final int main_exam_iv=0x7f0a0061;
+        public static final int main_my_iv=0x7f0a0063;
+        public static final int main_setting_iv=0x7f0a0064;
         public static final int main_study_history_iv=0x7f0a006c;
         public static final int masonry_item_img=0x7f0a0081;
         public static final int masonry_item_title=0x7f0a0082;
@@ -1403,26 +1404,27 @@ containing a value of this type.
         public static final int fragment_my=0x7f030027;
         public static final int image_group_item=0x7f030028;
         public static final int image_list_item=0x7f030029;
-        public static final int item_example_gv=0x7f03002a;
-        public static final int item_guidance_page=0x7f03002b;
-        public static final int item_main_classchapter_exlv=0x7f03002c;
-        public static final int item_main_classnode_exlv=0x7f03002d;
-        public static final int item_masonry=0x7f03002e;
-        public static final int item_show_pics_page=0x7f03002f;
-        public static final int layout_img_task=0x7f030030;
-        public static final int layout_item_clickable=0x7f030031;
-        public static final int layout_loading_imageview=0x7f030032;
-        public static final int layout_upgrade_dialog=0x7f030033;
-        public static final int layout_zoomable_loading_imageview=0x7f030034;
-        public static final int load_more=0x7f030035;
-        public static final int loading_layout=0x7f030036;
-        public static final int nofification_update_app=0x7f030037;
-        public static final int popup_menu_item=0x7f030038;
-        public static final int popup_menu_layout=0x7f030039;
-        public static final int popup_pic_select=0x7f03003a;
-        public static final int ppw_setting=0x7f03003b;
-        public static final int refresh_head=0x7f03003c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03003d;
+        public static final int include_setting_drawlayout=0x7f03002a;
+        public static final int item_example_gv=0x7f03002b;
+        public static final int item_guidance_page=0x7f03002c;
+        public static final int item_main_classchapter_exlv=0x7f03002d;
+        public static final int item_main_classnode_exlv=0x7f03002e;
+        public static final int item_masonry=0x7f03002f;
+        public static final int item_show_pics_page=0x7f030030;
+        public static final int layout_img_task=0x7f030031;
+        public static final int layout_item_clickable=0x7f030032;
+        public static final int layout_loading_imageview=0x7f030033;
+        public static final int layout_upgrade_dialog=0x7f030034;
+        public static final int layout_zoomable_loading_imageview=0x7f030035;
+        public static final int load_more=0x7f030036;
+        public static final int loading_layout=0x7f030037;
+        public static final int nofification_update_app=0x7f030038;
+        public static final int popup_menu_item=0x7f030039;
+        public static final int popup_menu_layout=0x7f03003a;
+        public static final int popup_pic_select=0x7f03003b;
+        public static final int ppw_setting=0x7f03003c;
+        public static final int refresh_head=0x7f03003d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03003e;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
@@ -1490,6 +1492,7 @@ containing a value of this type.
         public static final int refreshing=0x7f0b0017;
         public static final int release_to_load=0x7f0b001b;
         public static final int release_to_refresh=0x7f0b0016;
+        public static final int setting=0x7f0b0021;
         public static final int storage_removed=0x7f0b0011;
     }
     public static final class style {
@@ -1519,11 +1522,13 @@ containing a value of this type.
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
 
 
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
 
 
         
@@ -1547,10 +1552,12 @@ containing a value of this type.
          */
         public static final int AppTheme=0x7f0c0080;
         public static final int Edu_NoTitleBar_Anim=0x7f0c0081;
+        public static final int HorizontalLine=0x7f0c008b;
         public static final int LeftDrawlayoutStyle=0x7f0c008a;
         /**  单项按钮样式 
          */
         public static final int RadioStyle=0x7f0c0086;
+        public static final int SettingItem=0x7f0c008c;
         public static final int SizeBarButtonStyle=0x7f0c0088;
         public static final int SizeBarStyle=0x7f0c0087;
         /**  Mimic text appearance in select_dialog_item.xml 

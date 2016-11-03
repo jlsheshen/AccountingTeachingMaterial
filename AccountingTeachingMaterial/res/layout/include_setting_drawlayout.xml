@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/LeftDrawlayoutStyle"
+    android:layout_gravity="start"
+    android:background="@color/blue"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/SettingItem"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/setting"
+        android:textSize="@dimen/title_text_size" />
+
+    <View style="@style/HorizontalLine" />
+
+    <LinearLayout
+        style="@style/SettingItem"
+        android:orientation="horizontal" >
+
+        <com.edu.library.view.CircleImageView
+            android:id="@+id/my_head_civ"
+            android:layout_width="0"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_launcher"
+            app:civ_border_color="@color/trans_parent"
+            app:civ_border_overlay="false"
+            app:civ_border_width="0dp"
+            app:civ_fill_color="@color/white" />
+        
+        <TextView 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="点击登陆"
+            />
+    </LinearLayout>
+
+    <View style="@style/HorizontalLine" />
+</LinearLayout>
