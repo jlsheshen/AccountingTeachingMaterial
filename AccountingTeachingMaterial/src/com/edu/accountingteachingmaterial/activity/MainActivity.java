@@ -16,8 +16,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.DrawerLayout.DrawerListener;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 
@@ -89,7 +91,8 @@ public class MainActivity extends BaseActivity implements OnClickListener, Drawe
                drawerLayout.setDrawerListener(this);
                //从左侧划出
                drawerLayout.openDrawer(Gravity.LEFT);
-               //取消背景颜色
+               
+               //设置背景颜色
         //       drawerLayout.setScrimColor(Color.TRANSPARENT);
 
 			break;
@@ -120,6 +123,7 @@ public class MainActivity extends BaseActivity implements OnClickListener, Drawe
 
 	@Override
 	public void onDrawerOpened(View arg0) {
+		
 		// TODO Auto-generated method stub
 		
 	}
@@ -135,6 +139,7 @@ public class MainActivity extends BaseActivity implements OnClickListener, Drawe
 		// TODO Auto-generated method stub
 		
 	}
+
 
 
 

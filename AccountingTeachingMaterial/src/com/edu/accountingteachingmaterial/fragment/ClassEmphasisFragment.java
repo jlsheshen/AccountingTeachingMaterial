@@ -19,7 +19,7 @@ public class ClassEmphasisFragment  extends BaseFragment{
 	protected void initView(View view) {
 
 		 wView = bindView(R.id.emphasis_wv);
-		 wView.loadUrl(UriConstant.FILE_PATH+ "san360.html");		
+		 wView.loadUrl(UriConstant.ASSETS_PATH+ "san360.html");		
 	}
 
 	@Override
