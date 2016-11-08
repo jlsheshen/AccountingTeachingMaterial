@@ -22,6 +22,8 @@
             android:name="com.edu.accountingteachingmaterial.activity.MainActivity"/>
         <activity
             android:name="com.edu.accountingteachingmaterial.activity.ClassDetailActivity"/>
+        <activity android:name=".activity.MediaActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
     </application>
 
 </manifest>

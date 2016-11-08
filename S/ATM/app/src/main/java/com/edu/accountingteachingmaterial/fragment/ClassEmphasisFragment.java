@@ -8,6 +8,7 @@ import com.edu.accountingteachingmaterial.base.BaseFragment;
 import com.edu.accountingteachingmaterial.constant.UriConstant;
 
 public class ClassEmphasisFragment  extends BaseFragment{
+
 	 WebView wView;
 	@Override
 	protected int initLayout() {
@@ -19,7 +20,8 @@ public class ClassEmphasisFragment  extends BaseFragment{
 	protected void initView(View view) {
 
 		 wView = bindView(R.id.emphasis_wv);
-		 wView.loadUrl(UriConstant.ASSETS_PATH+ "san360.html");		
+		//启用支持javascript
+	 wView.loadUrl(UriConstant.ASSETS_PATH+ "san.html");
 	}
 
 	@Override

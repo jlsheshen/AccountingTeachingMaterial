@@ -1,17 +1,17 @@
 package com.edu.accountingteachingmaterial.fragment;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.media.ThumbnailUtils;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.TextView;
 
 import com.edu.accountingteachingmaterial.R;
+import com.edu.accountingteachingmaterial.activity.MediaActivity;
 import com.edu.accountingteachingmaterial.adapter.ExampleGVAdapter;
 import com.edu.accountingteachingmaterial.base.BaseFragment;
 import com.edu.accountingteachingmaterial.bean.ExampleBean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 经典示例
@@ -46,6 +46,12 @@ public class ClassExampleFragment extends BaseFragment {
 		exampleGVAdapter = new ExampleGVAdapter(context);
 		exampleGVAdapter.setBeans(exampleBeans);
 		gridView.setAdapter(exampleGVAdapter);
+		gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+				startActivity(MediaActivity.class);
+			}
+		});
 
 	}
 

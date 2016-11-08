@@ -10,22 +10,22 @@
             android:id="@+id/class_emphasis_iv"
             style="@style/SizeBarButtonStyle"
             android:checked="true"
-            android:drawableTop="@drawable/ic_launcher" />
+            android:drawableTop="@drawable/selector_class_detail_emphasis" />
 
         <RadioButton
             android:id="@+id/class_example_iv"
             style="@style/SizeBarButtonStyle"
-            android:drawableTop="@drawable/ic_launcher" />
+            android:drawableTop="@drawable/selector_class_detail_example" />
 
         <RadioButton
             android:id="@+id/class_exercise_iv"
             style="@style/SizeBarButtonStyle"
-            android:drawableTop="@drawable/ic_launcher" />
+            android:drawableTop="@drawable/selector_class_detail_exercise" />
 
         <RadioButton
             android:id="@+id/class_review_iv"
             style="@style/SizeBarButtonStyle"
-            android:drawableTop="@drawable/ic_launcher" />
+            android:drawableTop="@drawable/selector_class_detail_review" />
     </RadioGroup>
 
     <LinearLayout
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:src="@drawable/ic_launcher" />
+            android:src="@mipmap/icon_fanhui_n" />
 
         <TextView
             android:id="@+id/class_id_title_tv"
@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:src="@drawable/ic_launcher" />
+            android:src="@mipmap/icon_zhangjieliebiao_n" />
     </LinearLayout>
         <FrameLayout
         android:id="@+id/class_aty_view"
