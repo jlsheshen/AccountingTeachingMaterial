@@ -75,8 +75,10 @@ public class ClassChapterExLvAdapter extends BaseExpandableListAdapter {
 	public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
 		
 		convertView = LayoutInflater.from(context).inflate(R.layout.item_main_classchapter_exlv, parent,false);
-		TextView textView = (TextView) convertView.findViewById(R.id.item_classchapter_tv);
-		textView.setText(datas.get(groupPosition).getTitle());
+		TextView titlyTv = (TextView) convertView.findViewById(R.id.item_classchapter_tv);
+		titlyTv.setText(datas.get(groupPosition).getTitle());
+		TextView titleNum = (TextView) convertView.findViewById(R.id.item_classchapter_num_tv);
+		titleNum.setText(datas.get(groupPosition).getChapterNum());
 		ImageView imageView = (ImageView) convertView.findViewById(R.id.item_classchapter_iv);
 		//箭头随着子列的展开而变化
 		if (isExpanded){
@@ -84,18 +86,15 @@ public class ClassChapterExLvAdapter extends BaseExpandableListAdapter {
 		else {
 			imageView.setSelected(false);
 		}
-
-
 		return convertView;
 	}
-
 	@Override
 	public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 		convertView = LayoutInflater.from(context).inflate(R.layout.item_main_classnode_exlv, parent,false);
 		TextView textView = (TextView) convertView.findViewById(R.id.item_classnode_tv);
 		textView.setText(datas.get(groupPosition).getNodes().get(childPosition).getTitle());
-
-
+		TextView num = (TextView) convertView.findViewById(R.id.item_classnode_num_tv);
+		num.setText(datas.get(groupPosition).getNodes().get(childPosition).getNodeNum());
 		return convertView;
 	}
 

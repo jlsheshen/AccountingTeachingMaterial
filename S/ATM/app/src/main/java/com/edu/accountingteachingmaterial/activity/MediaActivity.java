@@ -3,6 +3,7 @@ package com.edu.accountingteachingmaterial.activity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.MediaController;
 import android.widget.SeekBar;
 import android.widget.Toast;
@@ -36,31 +37,29 @@ public class MediaActivity extends BaseMvpActivity<MediaAtyView,MediaAtyPresente
 
         videoView = bindView(R.id.media_vv);
         mController = new MediaController(this);
-//        presenter.start();
-//        // 设置播放视频源的路径
-//        videoView.setVideoPath(UriConstant.VIDEO_PATH + "VID_20161103_125654.mp4");
-//        // 为VideoView指定MediaController
-//        videoView.setMediaController(mController);
-//        // 为MediaController指定控制的VideoView
-//        mController.setMediaPlayer(videoView);
-//        // 增加监听上一个和下一个的切换事件，默认这两个按钮是不显示的
-//        mController.setPrevNextListeners(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(MediaActivity.this, "下一个", Toast.LENGTH_SHORT).show();
-//            }
-//        }, new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(MediaActivity.this, "上一个", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+       // presenter.start();
+        // 设置播放视频源的路径
+        videoView.setVideoPath(UriConstant.VIDEO_PATH + "VID_20161103_125654.mp4");
+        // 为VideoView指定MediaController
+        videoView.setMediaController(mController);
+        // 为MediaController指定控制的VideoView
+        mController.setMediaPlayer(videoView);
+        // 增加监听上一个和下一个的切换事件，默认这两个按钮是不显示的
+        mController.setPrevNextListeners(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+            }
+        }, new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+            }
+        });
 
 
 
-     seekBar = bindView(R.id.media_sb);
+//     seekBar = bindView(R.id.media_sb);
 
 //        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
 //            @Override
@@ -163,7 +162,8 @@ public class MediaActivity extends BaseMvpActivity<MediaAtyView,MediaAtyPresente
 
     @Override
     public void initData() {
-        play(0);
+
+//        play(0);
     }
 
     @Override

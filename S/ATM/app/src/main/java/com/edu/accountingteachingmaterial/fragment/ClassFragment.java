@@ -1,8 +1,5 @@
 package com.edu.accountingteachingmaterial.fragment;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
@@ -16,6 +13,9 @@ import com.edu.accountingteachingmaterial.adapter.ClassChapterExLvAdapter;
 import com.edu.accountingteachingmaterial.base.BaseFragment;
 import com.edu.accountingteachingmaterial.bean.ClassChapterBean;
 import com.edu.accountingteachingmaterial.bean.NodeBean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClassFragment  extends BaseFragment{
 
@@ -70,10 +70,11 @@ public class ClassFragment  extends BaseFragment{
 			ClassChapterBean chapterBean = new ClassChapterBean();
 			List<NodeBean> nodes = new ArrayList<>();
 			chapterBean.setChapterId(i);
-			chapterBean.setTitle("章节标题 编号--" + i);
+			chapterBean.setChapterNum("第" + i + "章");
+			chapterBean.setTitle("章节标题" + i);
 			for (int j = 0; j < 10; j++) {
 				NodeBean node = new NodeBean();
-
+				node.setNodeNum("第" + j + "节");
 				node.setNodeId(i + "--" + j);
 				node.setTitle("小节编号" + node.getNodeId());
 				nodes.add(node);

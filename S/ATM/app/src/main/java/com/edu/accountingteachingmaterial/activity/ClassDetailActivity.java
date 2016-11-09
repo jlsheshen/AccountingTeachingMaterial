@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 
 import com.edu.accountingteachingmaterial.R;
@@ -17,6 +18,7 @@ public class ClassDetailActivity extends BaseActivity implements OnClickListener
 	// 重点难点,经典实例,精选练习,自我检测
 	RadioButton classEmphasisButton, classExampleButton, classExerciseButton, classReviewButton;
 	Fragment classEmphasisFragment, classExampleFragment, classExerciseFragment, classReviewFragment;
+	ImageView backIv;
 
 	@Override
 	public int setLayout() {
@@ -30,6 +32,7 @@ public class ClassDetailActivity extends BaseActivity implements OnClickListener
 		bindAndListener(classExampleButton, R.id.class_example_iv);
 		bindAndListener(classExerciseButton, R.id.class_exercise_iv);
 		bindAndListener(classReviewButton, R.id.class_review_iv);
+		bindAndListener(backIv,R.id.class_aty_back_iv);
 
 
 	}
@@ -85,6 +88,10 @@ public class ClassDetailActivity extends BaseActivity implements OnClickListener
 				classReviewFragment = new ClassFragment();
             }
 			replaceFragment(classReviewFragment );
+			break;
+			case R.id.class_aty_back_iv:
+				finish();
+
 			break;
 
 		}

@@ -10,9 +10,17 @@ public class ClassChapterBean extends BaseData {
 	
 	int chapterId;
 	String title;
+	String chapterNum;
 	List<NodeBean> nodes;
-	
-	
+
+	public String getChapterNum() {
+		return chapterNum;
+	}
+
+	public void setChapterNum(String chapterNum) {
+		this.chapterNum = chapterNum;
+	}
+
 	public int getChapterId() {
 		return chapterId;
 	}

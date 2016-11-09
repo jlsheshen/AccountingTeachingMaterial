@@ -2,7 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-    
+    android:background="@color/colorBlueBackground"
+    android:orientation="vertical">
+    <LinearLayout style="@style/TitleBarStyle">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/exam"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/title_text_size" />
+    </LinearLayout>
+
+    <View style="@style/HorizontalLine"></View>
+
+    <ListView
+        android:id="@+id/exam_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        ></ListView>
+
 
 </LinearLayout>

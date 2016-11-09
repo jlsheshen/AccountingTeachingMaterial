@@ -2,7 +2,16 @@ package com.edu.accountingteachingmaterial.bean;
 
 public class NodeBean {
 	String nodeId;
+	String nodeNum;
 	String title;
+
+	public String getNodeNum() {
+		return nodeNum;
+	}
+
+	public void setNodeNum(String nodeNum) {
+		this.nodeNum = nodeNum;
+	}
 
 	public String getNodeId() {
 		return nodeId;
