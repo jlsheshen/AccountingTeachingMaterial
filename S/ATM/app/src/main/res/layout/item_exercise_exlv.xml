@@ -59,14 +59,14 @@
 
             />
         <TextView
-            android:id="@+id/item_exercise_itemumber_tv"
+            android:id="@+id/item_exercise_testnum_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/item_text_size"
             android:drawableLeft="@mipmap/icon_shitishu_n"
             android:padding="@dimen/little_interval"
-            android:text="@string/test_number" />
+             />
 
 
     </LinearLayout>
