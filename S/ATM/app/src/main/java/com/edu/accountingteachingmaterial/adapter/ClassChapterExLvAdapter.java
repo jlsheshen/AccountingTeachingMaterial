@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.edu.accountingteachingmaterial.R;
 import com.edu.accountingteachingmaterial.bean.ClassChapterBean;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.List;
 
@@ -75,6 +76,7 @@ public class ClassChapterExLvAdapter extends BaseExpandableListAdapter {
 	public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
 		
 		convertView = LayoutInflater.from(context).inflate(R.layout.item_main_classchapter_exlv, parent,false);
+		AutoUtils.autoSize(convertView);
 		TextView titlyTv = (TextView) convertView.findViewById(R.id.item_classchapter_tv);
 		titlyTv.setText(datas.get(groupPosition).getTitle());
 		TextView titleNum = (TextView) convertView.findViewById(R.id.item_classchapter_num_tv);
@@ -91,6 +93,7 @@ public class ClassChapterExLvAdapter extends BaseExpandableListAdapter {
 	@Override
 	public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 		convertView = LayoutInflater.from(context).inflate(R.layout.item_main_classnode_exlv, parent,false);
+		AutoUtils.autoSize(convertView);
 		TextView textView = (TextView) convertView.findViewById(R.id.item_classnode_tv);
 		textView.setText(datas.get(groupPosition).getNodes().get(childPosition).getTitle());
 		TextView num = (TextView) convertView.findViewById(R.id.item_classnode_num_tv);

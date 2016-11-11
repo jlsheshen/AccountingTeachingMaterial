@@ -12,6 +12,7 @@ import com.edu.accountingteachingmaterial.R;
 import com.edu.accountingteachingmaterial.base.BaseActivity;
 import com.edu.accountingteachingmaterial.fragment.ClassEmphasisFragment;
 import com.edu.accountingteachingmaterial.fragment.ClassExampleFragment;
+import com.edu.accountingteachingmaterial.fragment.ClassExerciseFragment;
 import com.edu.accountingteachingmaterial.fragment.ClassFragment;
 
 public class ClassDetailActivity extends BaseActivity implements OnClickListener {
@@ -79,7 +80,7 @@ public class ClassDetailActivity extends BaseActivity implements OnClickListener
 			break;
 		case R.id.class_exercise_iv:
 			if (null == classExerciseFragment) {
-				classExerciseFragment = new ClassFragment();
+				classExerciseFragment = new ClassExerciseFragment();
             }
 			replaceFragment(classExerciseFragment );
 			break;

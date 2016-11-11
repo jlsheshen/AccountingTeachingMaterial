@@ -47,18 +47,33 @@ public final class ClassContstant {
     //题型
     //单选
     public static final int SUBJECT_SINGLE_CHOSE = 1;
+
+    public static final String SUBJECT_SINGLE_CHOSE_STRING = "单选题";
+
     //多选
     public static final int SUBJECT_MULITI_CHOSE = 2;
+    public static final String SUBJECT_MULITI_CHOSE_STRING = "多选题";
+
     //判断
     public static final int SUBJECT_JUDGE =3;
+    public static final String SUBJECT_JUDGE_STRING = "判断题";
+
     //实训
     public static final int SUBJECT_PRACTIAL =4;
+    public static final String SUBJECT_PRACTIAL_STRING = "实训题";
+
     //分录
     public static final int SUBJECT_ENTRY = 5;
+    public static final String SUBJECT_ENTRY_STRING = "分录题";
+
     //凭证
     public static final int SUBJECT_BILL = 6;
+    public static final String SUBJECT_BILL_STRING = "凭证题";
+
     //多组凭证
     public static final int SUBJECT_GROUP_BILL = 7;
+    public static final String SUBJECT_GROUP_BILL_STRING = "分组凭证";
+
 
 
 

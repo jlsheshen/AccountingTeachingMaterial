@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 <ImageView 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="1365dp"
+    android:layout_height="736dp"
     android:src="@drawable/luanch"
-    android:scaleType="fitCenter"
-    
+    android:scaleType="fitXY"
+
     />    
 
 </RelativeLayout>

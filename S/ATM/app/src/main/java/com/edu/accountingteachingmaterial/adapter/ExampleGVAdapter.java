@@ -15,6 +15,7 @@ import com.edu.accountingteachingmaterial.R;
 import com.edu.accountingteachingmaterial.bean.ExampleBean;
 import com.edu.accountingteachingmaterial.constant.ClassContstant;
 import com.edu.accountingteachingmaterial.constant.UriConstant;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.List;
 
@@ -55,6 +56,8 @@ public class ExampleGVAdapter extends BaseAdapter {
 		ViewHolder viewHolder = null;
 		if (convertView == null) {
 			convertView = LayoutInflater.from(context).inflate(R.layout.item_example_gv, parent, false);
+			AutoUtils.autoSize(convertView);
+
 			viewHolder = new ViewHolder(convertView);
 			convertView.setTag(viewHolder);
 		}
@@ -63,9 +66,16 @@ public class ExampleGVAdapter extends BaseAdapter {
 		switch (beans.get(position).getType()) {
 		case ClassContstant.MEADIA_TYPE:
 			Bitmap bitmap = ThumbnailUtils.createVideoThumbnail(UriConstant.VIDEO_PATH + beans.get(position).getUrl(), MediaStore.Images.Thumbnails.MINI_KIND);
+
+			//Bitmap bitmap = ThumbnailUtils.createVideoThumbnail("android.resource://aaa.mp4/raw/starttv", MediaStore.Images.Thumbnails.MINI_KIND);
+
 			bitmap = ThumbnailUtils.extractThumbnail(bitmap, 100, 60, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
 			viewHolder.cardIv.setImageBitmap(bitmap);
 			viewHolder.typeIv.setImageResource(R.mipmap.icon_shipin_n);
+			break;
+		case ClassContstant.PDF_TYPE:
+			viewHolder.cardIv.setImageResource(R.mipmap.pdf);
+			viewHolder.typeIv.setImageResource(R.mipmap.icon_word_n);
 			break;
 
 

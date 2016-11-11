@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.ExpandableListView;
 
 import com.edu.accountingteachingmaterial.R;
+import com.edu.accountingteachingmaterial.adapter.ExerciseExLvAdapter;
 import com.edu.accountingteachingmaterial.base.BaseFragment;
 import com.edu.accountingteachingmaterial.bean.ExerciseBean;
 import com.edu.accountingteachingmaterial.bean.ExercisePracticeBean;
@@ -33,6 +34,9 @@ public class ClassExerciseFragment extends BaseFragment {
     @Override
     protected void initData() {
         loadDatas();
+        ExerciseExLvAdapter adapter = new ExerciseExLvAdapter(context);
+        adapter.setDatas(datas);
+        expandableListView.setAdapter(adapter);
 
     }
 

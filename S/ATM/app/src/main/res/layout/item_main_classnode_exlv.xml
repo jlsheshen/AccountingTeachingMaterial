@@ -3,27 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:padding="@dimen/middle_interval"
-    android:background="@color/colorBlueBackground"
-    >
+    android:paddingTop="10px"
+    android:paddingBottom="10px">
 
     <TextView
-    android:id="@+id/item_classnode_num_tv"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/class_name"
-    android:textColor="@color/colorNodeListItem"
-    android:textSize="@dimen/item_text_size" />
+        android:id="@+id/item_classnode_num_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="@string/class_name"
+
+        android:textColor="@color/colorNodeListItem"
+        android:textSize="@dimen/content_text_size" />
 
     <TextView
         android:id="@+id/item_classnode_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
         android:layout_marginLeft="@dimen/middle_interval"
+        android:layout_weight="1"
         android:text="@string/class_name"
         android:textColor="@color/colorNodeListItem"
-        android:textSize="@dimen/item_text_size" />
+        android:textSize="@dimen/content_text_size" />
 
 </LinearLayout>

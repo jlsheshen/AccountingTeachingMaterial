@@ -1,16 +1,21 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:background">#00000000</item>
     </style>
     <style name="SizeBarStyle">
         <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_width">@dimen/side_bar_width</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginTop">76px</item>
+        <item name="android:layout_marginBottom">16px</item>
+        <item name="android:layout_marginLeft">16px</item>
     </style>
 
     <style name="SizeBarButtonStyle">
@@ -18,33 +23,34 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_weight">1</item>
         <item name="android:button">@null</item>
-        <item name="android:paddingTop">40dp</item>
-        <item name="android:paddingBottom">40dp</item>
+
     </style>
 
     <style name="TitleBarStyle">
         <item name="android:layout_height">@dimen/title_layout_height</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:paddingTop">20dp</item>
-        <item name="android:paddingBottom">20dp</item>
-        <item name="android:paddingLeft">20dp</item>
-        <item name="android:paddingRight">20dp</item>
     </style>
 
     <style name="LeftDrawlayoutStyle">
         <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_width">@dimen/drawlayout_width</item>
+        <item name="android:layout_width">300px</item>
     </style>
 
     <style name="HorizontalLine">
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_marginLeft">@dimen/horizontal_lin_padding</item>
-        <item name="android:layout_marginRight">@dimen/horizontal_lin_padding</item>
         <item name="android:background">@color/colorBlueContent</item>
     </style>
+    <style name="VerticalLine">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">1dp</item>
+        <item name="android:background">@color/colorBlueContent</item>
+        <item name="android:layout_marginLeft">15px</item>
+        <item name="android:layout_marginRight">15px</item>
+    </style>
+    
     <style name = "SettingItem">
-        <item name="android:layout_height">@dimen/title_layout_height</item>
+        <item name="android:layout_height">60px</item>
         <item name="android:layout_width">match_parent</item>
     </style>
     <style name="ExpandableLvStyle">
@@ -55,6 +61,16 @@
         <item name="android:dividerHeight">1dp</item>
         <item name="android:layout_margin">@dimen/little_interval</item>
         <item name="android:childDivider">@color/colorBlueContent</item>
+    </style>
+    <style name="FragmentPadding">
+        <item name="android:paddingLeft">10px</item>
+        <item name="android:paddingRight">10px</item>
+    </style>
+    <style name="ItemPadding">
+        <item name="android:paddingTop">10px</item>
+        <item name="android:paddingBottom">10px</item>
+
+
     </style>
 
 

@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="60px"
     android:orientation="horizontal"
-    android:padding="@dimen/middle_interval">
+    android:paddingTop="10px"
+    android:paddingBottom="10px">
 
     <TextView
         android:id="@+id/item_classchapter_num_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/little_interval"
+        android:layout_gravity="center_vertical"
         android:text="@string/class_name"
         android:textColor="@color/colorWhite"
-        android:textSize="@dimen/item_title_text_size" />
+        android:textSize="@dimen/item_title_text_size"
+
+        />
 
 
     <TextView
         android:id="@+id/item_classchapter_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
+        android:layout_gravity="center_vertical"
         android:layout_marginLeft="@dimen/middle_interval"
         android:layout_weight="1"
-        android:padding="@dimen/little_interval"
         android:text="@string/class_name"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/item_title_text_size"
@@ -32,6 +34,7 @@
         android:id="@+id/item_classchapter_iv"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
         android:src="@drawable/secector_main_chapter_fold" />
 
 

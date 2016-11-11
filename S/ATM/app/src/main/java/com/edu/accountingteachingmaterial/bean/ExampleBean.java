@@ -5,12 +5,12 @@ import com.edu.accountingteachingmaterial.base.BaseData;
 
 public class ExampleBean extends BaseData {
 	
-	int type ;
+	private int type ;
 	
 	String name;
 	
 	String url;
-	
+
 
 	public int getType() {
 		return type;

@@ -39,7 +39,7 @@ public class MediaActivity extends BaseMvpActivity<MediaAtyView,MediaAtyPresente
         mController = new MediaController(this);
        // presenter.start();
         // 设置播放视频源的路径
-        videoView.setVideoPath(UriConstant.VIDEO_PATH + "VID_20161103_125654.mp4");
+        videoView.setVideoPath(UriConstant.VIDEO_PATH + "aaa.mp4");
         // 为VideoView指定MediaController
         videoView.setMediaController(mController);
         // 为MediaController指定控制的VideoView
