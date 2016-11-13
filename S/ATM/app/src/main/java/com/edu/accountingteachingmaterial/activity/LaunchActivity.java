@@ -6,12 +6,6 @@ import android.os.CountDownTimer;
 import com.edu.accountingteachingmaterial.R;
 import com.edu.accountingteachingmaterial.base.BaseActivity;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
 
 public class LaunchActivity extends BaseActivity{
 	CountDownTimer timer;
@@ -24,56 +18,56 @@ public class LaunchActivity extends BaseActivity{
 
 	@Override
 	public void initView(Bundle savedInstanceState) {
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-
-				String databaseFilename ="/sdcard/EduResources/AccCourse";
-				File dir = new File(databaseFilename);
-
-				if (!dir.exists()){
-					dir.mkdir();}
-				File dir2 = new File("/sdcard/EduResources/AccCourse/video");
-
-				if (!dir2.exists()){
-					dir2.mkdir();}
-
-				if (!(new File("/sdcard/EduResources/AccCourse/video/aaa.mp4")).exists())
-				{
-
-					InputStream is = getResources().openRawResource(R.raw.aaa);
-					FileOutputStream fos = null;
-					try {
-						fos = new FileOutputStream("/sdcard/EduResources/AccCourse/video/aaa.mp4");
-					} catch (FileNotFoundException e) {
-						e.printStackTrace();
-					}
-					byte[] buffer = new byte[8192];
-					int count = 0;
-
-					try {
-						while ((count = is.read(buffer)) > 0)
-                        {
-                            fos.write(buffer, 0, count);
-                        }
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-					try {
-						fos.close();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-					try {
-						is.close();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-
-
-		}).start();
+//		new Thread(new Runnable() {
+//			@Override
+//			public void run() {
+//
+//				String databaseFilename ="/sdcard/EduResources/AccCourse";
+//				File dir = new File(databaseFilename);
+//
+//				if (!dir.exists()){
+//					dir.mkdir();}
+//				File dir2 = new File("/sdcard/EduResources/AccCourse/video");
+//
+//				if (!dir2.exists()){
+//					dir2.mkdir();}
+//
+//				if (!(new File("/sdcard/EduResources/AccCourse/video/aaa.mp4")).exists())
+//				{
+//
+//					InputStream is = getResources().openRawResource(R.raw.aaa);
+//					FileOutputStream fos = null;
+//					try {
+//						fos = new FileOutputStream("/sdcard/EduResources/AccCourse/video/aaa.mp4");
+//					} catch (FileNotFoundException e) {
+//						e.printStackTrace();
+//					}
+//					byte[] buffer = new byte[8192];
+//					int count = 0;
+//
+//					try {
+//						while ((count = is.read(buffer)) > 0)
+//                        {
+//                            fos.write(buffer, 0, count);
+//                        }
+//					} catch (IOException e) {
+//						e.printStackTrace();
+//					}
+//					try {
+//						fos.close();
+//					} catch (IOException e) {
+//						e.printStackTrace();
+//					}
+//					try {
+//						is.close();
+//					} catch (IOException e) {
+//						e.printStackTrace();
+//					}
+//				}
+//			}
+//
+//
+//		}).start();
 		// TODO Auto-generated method stub
 		timer = new CountDownTimer(3000,1000) {
 			@Override
