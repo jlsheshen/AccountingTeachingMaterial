@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\rotating.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\rotating.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\goodlist_dialog_in.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\goodlist_dialog_in.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\goodlist_dialog_out.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\goodlist_dialog_out.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\dialog_exit_anim.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\dialog_exit_anim.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\activity_anim_in.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\activity_anim_in.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_out.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\push_left_out.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\dialog_enter_anim.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\dialog_enter_anim.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\fade_out.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\fade_out.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\reverse_anim.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\reverse_anim.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_out.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\push_bottom_out.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_in.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\push_bottom_in.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\activity_anim_out.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\activity_anim_out.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\fade_in.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\fade_in.xml"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_in.xml",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\anim\\push_left_in.xml"
+    }
+]

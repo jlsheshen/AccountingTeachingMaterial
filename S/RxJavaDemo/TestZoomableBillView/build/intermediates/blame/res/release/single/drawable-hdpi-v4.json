@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_error.png",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\res\\drawable-hdpi\\ic_error.png"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_chooser.png",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\drawable-hdpi-v4\\ic_chooser.png"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_provider.png",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\drawable-hdpi-v4\\ic_provider.png"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_file.png",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\drawable-hdpi-v4\\ic_file.png"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_folder.png",
+        "source": "F:\\TDDOWNLOAD\\adt-bundle-windows-x86\\workspace\\AccountingTeachingMaterial\\S\\RxJavaDemo\\TestZoomableBillView\\build\\intermediates\\exploded-aar\\RxJavaDemo\\EduLibrary-Upgrade\\unspecified\\res\\drawable-hdpi-v4\\ic_folder.png"
+    }
+]

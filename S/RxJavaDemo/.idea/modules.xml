@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EduLibrary-Upgrade/EduLibrary-Upgrade.iml" filepath="$PROJECT_DIR$/EduLibrary-Upgrade/EduLibrary-Upgrade.iml" />
       <module fileurl="file://$PROJECT_DIR$/RxJavaDemo.iml" filepath="$PROJECT_DIR$/RxJavaDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestZoomableBillView/TestZoomableBillView.iml" filepath="$PROJECT_DIR$/TestZoomableBillView/TestZoomableBillView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
