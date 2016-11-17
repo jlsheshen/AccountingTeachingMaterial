@@ -5,10 +5,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +27,10 @@ public class MyFragment extends Fragment {
     ViewPager viewPager2;
     List<Fragment> fragments2;
     MyAdapter myAdapter2;
-    View view1;
+    ImageView view1;
     View viewLayout;
+    ScrollView scrollView,backgroundSv;
+    LinearLayout linearLayout;
     private int startX;
     private int startY;
 Context context;
@@ -43,8 +49,11 @@ Context context;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewLayout = LayoutInflater.from(context).inflate(R.layout.one_fragment,container,false);
-view1 = viewLayout.findViewById(R.id.on_down);
+view1 = (ImageView) viewLayout.findViewById(R.id.on_down);
+        scrollView = (ScrollView) viewLayout.findViewById(R.id.blow_sv);
         viewPager2 = (ViewPager)viewLayout.findViewById(R.id.small_vp);
+        backgroundSv = (ScrollView) viewLayout.findViewById(R.id.background_sv);
+          linearLayout = (LinearLayout) viewLayout.findViewById(R.id.blow_ly);
         view1.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -75,8 +84,21 @@ view1 = viewLayout.findViewById(R.id.on_down);
 //                        }
 
                         // 更新界面
-                        view.layout(view.getLeft(), t, view.getRight(), b);
-                        viewPager2.setTop( view.getBottom() + dy);
+                      //  view.layout(view.getLeft(), t, view.getRight(), b);
+    //                    viewPager2.setTop( view.getBottom() + dy);
+                   //    scrollView.setTop(view.getBottom() + dy);
+                       backgroundSv.setBottom(backgroundSv.getBottom()+ dy);
+                        Log.d("MyFragment", "getScrollY: " + backgroundSv.getScrollY());
+//                        Log.d("MyFragment", "getMaxScrollAmount: " + backgroundSv.getChildAt(0).getMeasuredHeight());
+                        Log.d("MyFragment", "backgroundSv.getHeight(): " + backgroundSv.getHeight());
+//                        Log.d("MyFragment", "dy " + dy);
+
+                        if (backgroundSv.getScrollY()+ backgroundSv.getHeight() >= backgroundSv.getChildAt(0).getMeasuredHeight() ){
+                            Log.d("MyFragment", "走没走这里: ");
+                            backgroundSv.scrollTo(0,backgroundSv.getChildAt(0).getMeasuredHeight()- backgroundSv.getHeight());
+                        }
+                        //backgroundSv.scrollTo(0,backgroundSv.getBottom()+ dy);
+                        linearLayout.setTop(linearLayout.getTop() + dy);
 
                         // 重新初始化起点坐标
                         //startX = (int) motionEvent.getRawX();

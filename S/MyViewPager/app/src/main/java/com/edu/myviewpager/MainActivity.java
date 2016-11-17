@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager1,viewPager2;
     List<Fragment> fragments1,fragments2;
     MyAdapter myAdapter1,myAdapter2;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

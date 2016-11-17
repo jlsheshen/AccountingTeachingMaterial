@@ -2,24 +2,120 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <ImageView
+    <ScrollView
+        android:id="@+id/background_sv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitCenter"
-        android:src="@mipmap/ic_launcher" />
-    <View
-        android:id="@+id/on_down"
-        android:layout_marginTop="300dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_launcher" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="asdadasdasdasd" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_launcher" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="asdadasdasdasd" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_launcher" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="asdadasdasdasd" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_launcher" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="asdadasdasdasd" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_marginTop="250dp"
+
+        android:id="@+id/blow_ly"
         android:layout_width="match_parent"
+        android:layout_height="1000dp"
+        android:orientation="vertical"
+        >
+    <ImageView
+        android:src="@mipmap/ic_launcher"
+android:layout_centerHorizontal="true"
+        android:id="@+id/on_down"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:background="#000000" />
+      />
+
+    <ScrollView
+        android:layout_below="@id/on_down"
+        android:id="@+id/blow_sv"
+        android:layout_width="match_parent"
+        android:layout_height="900dp"
+        android:fillViewport="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
     <android.support.v4.view.ViewPager
         android:id="@+id/small_vp"
-        android:layout_below="@id/on_down"
         android:layout_width="match_parent"
-        android:layout_height="800dp"
+        android:layout_height="900dp"
         ></android.support.v4.view.ViewPager>
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+
+
+
+    <!--&lt;!&ndash;android:id="@+id/blow_sv"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="250dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:fillViewport="true"&ndash;&gt;-->
+
+    <!--&lt;!&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/blow_ly"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:orientation="vertical">&ndash;&gt;-->
+    <!--<View-->
+        <!--android:id="@+id/on_down"-->
+        <!--android:layout_marginTop="250dp"-->
+
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:background="#000000" />-->
+
+    <!--<android.support.v4.view.ViewPager-->
+        <!--android:layout_below="@id/on_down"-->
+        <!--android:id="@+id/small_vp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="900dp"-->
+        <!--&gt;</android.support.v4.view.ViewPager>-->
+    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+    <!--&lt;!&ndash;</ScrollView>&ndash;&gt;-->
 
 </RelativeLayout>
