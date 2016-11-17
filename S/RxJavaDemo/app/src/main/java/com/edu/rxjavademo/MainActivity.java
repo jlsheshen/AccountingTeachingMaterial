@@ -3,11 +3,18 @@ package com.edu.rxjavademo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
@@ -18,7 +25,11 @@ import rx.schedulers.Schedulers;
 public class MainActivity extends AppCompatActivity {
     String TAG = "rxjava";
     List<String> strings  = new ArrayList<>();
-
+    Button button;
+    EditText editText;
+    TextView textView;
+    ProgressBar progressBar;
+    String API = "https://api.github.com";
 
 
     @Override
@@ -26,6 +37,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: ");
+        Retrofit retrofit = new Retrofit.Builder()
+                .addConverterFactory(GsonConverterFactory.create())//解析方法
+                //这里建议：- Base URL: 总是以/结尾；- @Url: 不要以/开头
+                .baseUrl("http://www.wangyinews.com.cn/")
+                .build();
+        NewsService api = retrofit.create(NewsService .class);
+        Call<News> call = service.getNews("123456");
+
+
+        button = (Button) findViewById(R.id.btn);
+        editText  = (EditText) findViewById(R.id.et);
+        textView = (TextView) findViewById(R.id.string);
+        progressBar = (ProgressBar) findViewById(R.id.pb);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String user = editText.getText().toString();
+
+
+            }
+        });
 
 //        Subscriber<String> observer = new Subscriber<String>() {
 //
