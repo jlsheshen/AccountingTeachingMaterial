@@ -1,1 +1,1 @@
-include ':app', ':TestZoomableBillView', ':EduLibrary-Upgrade'
+include ':app'
