@@ -1,0 +1,108 @@
+10
+
+dir
+10662
+svn://192.168.1.157/chengyuan/3Dtextbook/2%20%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%BA%93/2.3%20%E6%B5%8B%E8%AF%95/MyViewPager
+svn://192.168.1.157/chengyuan
+
+
+
+2016-11-18T10:07:07.267811Z
+10662
+jilin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+cb5a131d-ae02-486f-b5f7-bb3f309dc133
+
+.gitignore
+file
+0
+
+
+add
+
+.idea
+dir
+
+
+
+add
+
+MyViewPager.iml
+file
+0
+
+
+add
+
+app
+dir
+
+build
+dir
+
+
+
+add
+
+build.gradle
+file
+0
+
+
+add
+
+gradle
+dir
+
+
+
+add
+
+gradle.properties
+file
+0
+
+
+add
+
+gradlew
+file
+0
+
+
+add
+
+gradlew.bat
+file
+0
+
+
+add
+
+local.properties
+file
+0
+
+
+add
+
+settings.gradle
+file
+0
+
+
+add
+
