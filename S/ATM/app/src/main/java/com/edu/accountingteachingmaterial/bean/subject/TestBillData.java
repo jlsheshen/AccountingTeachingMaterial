@@ -6,8 +6,7 @@ import com.edu.subject.SubjectConstant;
 import com.edu.subject.bill.element.info.BaseElementInfo;
 import com.edu.subject.bill.element.info.BlankInfo;
 import com.edu.subject.bill.template.BillTemplate;
-import com.edu.subject.data.BaseSubjectData;
-import com.edu.subject.data.SubjectBillData;
+
 
 import java.util.ArrayList;
 import java.util.List;
