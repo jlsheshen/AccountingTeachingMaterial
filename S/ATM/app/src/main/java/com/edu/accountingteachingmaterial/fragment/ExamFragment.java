@@ -9,10 +9,14 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.edu.accountingteachingmaterial.R;
+import com.edu.accountingteachingmaterial.activity.ExamTestActivity;
 import com.edu.accountingteachingmaterial.adapter.ExamAdapter;
 import com.edu.accountingteachingmaterial.base.BaseFragment;
 import com.edu.accountingteachingmaterial.bean.ExamBean;
 import com.edu.accountingteachingmaterial.constant.ClassContstant;
+import com.edu.library.util.DBCopyUtil;
+import com.edu.testbill.Constant;
+import com.edu.testbill.util.SoundPoolUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +42,13 @@ public class ExamFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+
+        // 检测数据库是否已拷贝
+        DBCopyUtil fileCopyUtil = new DBCopyUtil(context);
+        fileCopyUtil.checkDBVersion(Constant.DATABASE_NAME);
+        SoundPoolUtil.getInstance().init(context);
+
+
         loadData();
 
         examAdapter = new ExamAdapter(context);
@@ -66,6 +77,9 @@ public class ExamFragment extends BaseFragment {
                         }
                     }.start();
 
+
+                }else {
+                    startActivity(ExamTestActivity.class);
 
                 }
             }
