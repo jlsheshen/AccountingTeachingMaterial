@@ -1,6 +1,6 @@
 package com.edu.accountingteachingmaterial.bean;
 
-import com.edu.accountingteachingmaterial.base.BaseData;
+import com.edu.library.data.BaseData;
 
 /**
  * 练习中随堂练习题

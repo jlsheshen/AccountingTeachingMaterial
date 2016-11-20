@@ -16,9 +16,9 @@ import com.edu.subject.data.BaseTestData;
 import com.edu.subject.data.SignData;
 import com.edu.subject.data.TestBillData;
 import com.edu.subject.data.TestGroupBillData;
+import com.edu.subject.view.BaseScrollView;
 import com.edu.subject.view.BillView;
 import com.edu.subject.view.GroupBillView;
-import com.edu.subject.view.SingleSelectView;
 
 /**
  * viewpager里存放的fragment
@@ -78,7 +78,12 @@ public class SubjectViewPagerFragment extends Fragment {
 			break;
 
 		case SubjectType.SUBJECT_SINGLE:
-			mView = new SingleSelectView(mContext, mData);
+		//	mView = new SingleSelectView(mContext, mData);
+			mView = new SubjectSingleSelectView(context, mData, testMode);
+			((BaseScrollView) mView).setSubjectViewListener(mListener);
+			if (mAutoListener != null) {
+				((SubjectSingleSelectView) mView).setAutoJumpNextListener(mAutoListener);
+			}
 
 			break;
 

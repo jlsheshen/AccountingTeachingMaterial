@@ -113,5 +113,34 @@ public abstract class BaseSubjectData extends BaseData {
 	public void setFavorite(int favorite) {
 		this.favorite = favorite;
 	}
+	// 问题显示id
+	private int subjectIndex;
+	private boolean isDone;
+	private String indexName;//题卡
+	public int getSubjectIndex() {
+		return subjectIndex;
+	}
+
+	public void setSubjectIndex(int subjectIndex) {
+		this.subjectIndex = subjectIndex;
+	}
+
+
+
+	public boolean isDone() {
+		return isDone;
+	}
+
+	public void setDone(boolean isDone) {
+		this.isDone = isDone;
+	}
+
+	public String getIndexName() {
+		return indexName;
+	}
+
+	public void setIndexName(String indexName) {
+		this.indexName = indexName;
+	}
 
 }

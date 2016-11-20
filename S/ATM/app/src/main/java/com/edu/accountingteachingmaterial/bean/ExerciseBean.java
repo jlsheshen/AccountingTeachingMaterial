@@ -1,13 +1,13 @@
 package com.edu.accountingteachingmaterial.bean;
 
-import com.edu.accountingteachingmaterial.base.BaseData;
+import com.edu.library.data.BaseData;
 
 import java.util.List;
 
 /**
  * Created by Administrator on 2016/11/9.
  */
-public class ExerciseBean extends BaseData{
+public class ExerciseBean extends BaseData {
     //练习id
     private int exerciseId ;
     //当前状态

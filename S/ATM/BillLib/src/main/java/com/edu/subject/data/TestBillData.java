@@ -1,14 +1,14 @@
 package com.edu.subject.data;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 
 import com.edu.subject.SubjectConstant;
 import com.edu.subject.bill.element.info.BaseElementInfo;
 import com.edu.subject.bill.element.info.BlankInfo;
 import com.edu.subject.bill.template.BillTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 单据测试数据

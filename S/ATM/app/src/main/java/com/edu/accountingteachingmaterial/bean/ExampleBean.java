@@ -1,7 +1,7 @@
 package com.edu.accountingteachingmaterial.bean;
 
 
-import com.edu.accountingteachingmaterial.base.BaseData;
+import com.edu.library.data.BaseData;
 
 public class ExampleBean extends BaseData {
 	

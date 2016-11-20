@@ -1,8 +1,5 @@
 package com.edu.subject.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -14,6 +11,9 @@ import com.edu.library.util.ToastUtil;
 import com.edu.subject.SubjectConstant;
 import com.edu.subject.SubjectType;
 import com.edu.subject.data.SubjectBillData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 数据库操作dao层
