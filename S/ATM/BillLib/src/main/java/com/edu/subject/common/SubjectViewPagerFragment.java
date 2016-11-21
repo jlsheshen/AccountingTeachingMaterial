@@ -16,9 +16,9 @@ import com.edu.subject.data.BaseTestData;
 import com.edu.subject.data.SignData;
 import com.edu.subject.data.TestBillData;
 import com.edu.subject.data.TestGroupBillData;
-import com.edu.subject.view.BaseScrollView;
 import com.edu.subject.view.BillView;
 import com.edu.subject.view.GroupBillView;
+import com.edu.subject.view.SingleSelectView;
 
 /**
  * viewpager里存放的fragment
@@ -28,6 +28,7 @@ import com.edu.subject.view.GroupBillView;
  */
 public class SubjectViewPagerFragment extends Fragment {
 
+	private static final String TAG = "SubjectViewPagerFragment";
 	/**
 	 * 题目内容数据
 	 */
@@ -63,9 +64,8 @@ public class SubjectViewPagerFragment extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		Log.d("lucher", "onCreateView");
 		mContext = getActivity();
-
+		Log.d(TAG, "mData:" + mData);
 		switch (mData.getSubjectType()) {
 		case SubjectType.SUBJECT_BILL:
 			mView = new BillView(mContext, (TestBillData) mData);
@@ -78,12 +78,7 @@ public class SubjectViewPagerFragment extends Fragment {
 			break;
 
 		case SubjectType.SUBJECT_SINGLE:
-		//	mView = new SingleSelectView(mContext, mData);
-			mView = new SubjectSingleSelectView(context, mData, testMode);
-			((BaseScrollView) mView).setSubjectViewListener(mListener);
-			if (mAutoListener != null) {
-				((SubjectSingleSelectView) mView).setAutoJumpNextListener(mAutoListener);
-			}
+			mView = new SingleSelectView(mContext, mData);
 
 			break;
 
@@ -101,7 +96,7 @@ public class SubjectViewPagerFragment extends Fragment {
 	public void setUserVisibleHint(boolean isVisibleToUser) {
 		super.setUserVisibleHint(isVisibleToUser);
 		if (getUserVisibleHint()) {
-			onVisible();
+			delayLoad();
 		} else {
 			onInvisible();
 		}
@@ -110,25 +105,41 @@ public class SubjectViewPagerFragment extends Fragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		// int delay = 0;
-		// mView.postDelayed(new Runnable() {
-		//
-		// @Override
-		// public void run() {
-		onVisible();
-		// }
-		// }, delay);
+		if (getUserVisibleHint()) {
+			delayLoad();
+		}
+	}
 
+	/**
+	 * 延时加载,主要对于耗时的题型，为了不影响翻页速度，将采取延时加载措施
+	 */
+	private void delayLoad() {
+		if (!prepared) {
+			Log.e(TAG, "~~~delayLoad , prepared false");
+			return;
+		}
+		int delay = 0;
+		if (mData.getSubjectType() == SubjectType.SUBJECT_BILL || mData.getSubjectType() == SubjectType.SUBJECT_GROUP_BILL) {
+			delay = 300;
+		}
+		Log.i(TAG, "~~~delayLoad:" + delay);
+		mView.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				onVisible();
+			}
+		}, delay);
 	}
 
 	/**
 	 * fragment可见时回调
 	 */
 	private void onVisible() {
-		if (getUserVisibleHint() && prepared && mData.getSubjectType() == SubjectType.SUBJECT_BILL) {
-			((BillView) subjectView).requestDefaultFocus();
-		} else if (getUserVisibleHint() && prepared && mData.getSubjectType() == SubjectType.SUBJECT_GROUP_BILL) {
-			((GroupBillView) subjectView).requestDefaultFocus();
+		Log.d(TAG, "~~~onVisible:" + mData.getId() + "," + mData.getSubjectData().getQuestion());
+		if (mData.getSubjectType() == SubjectType.SUBJECT_BILL) {
+			((BillView) subjectView).onVisible();
+		} else if (mData.getSubjectType() == SubjectType.SUBJECT_GROUP_BILL) {
+			((GroupBillView) subjectView).onVisible();
 		}
 	}
 

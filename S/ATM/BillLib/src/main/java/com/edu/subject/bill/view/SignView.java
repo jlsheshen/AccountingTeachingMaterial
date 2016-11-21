@@ -6,6 +6,8 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AnticipateInterpolator;
@@ -29,6 +31,8 @@ import com.edu.subject.util.BitmapParseUtil;
 public class SignView extends ImageView implements IScaleable {
 
 	private static final String TAG = "SignView";
+	// 印章对比允许的误差范围，xy周围35像素均可
+	public static final int SIGN_XY_RANGE = 35;
 	// 对应印章的信息
 	private SignInfo mData;
 
@@ -291,6 +295,33 @@ public class SignView extends ImageView implements IScaleable {
 	 * 判断用户答案
 	 */
 	public void judgeAnswer() {
+		if(mData.isUser() && !mData.isCorrect()) {
+			setGrayMode();
+		}
+	}
+
+	/**
+	 * 印章对比，相同印章，而且xy坐标范围在SIGN_XY_RANGE以内算对，否则算错
+	 * 
+	 * @param sign
+	 * @return 两个印章是否为同一个印章
+	 */
+	public boolean compareSign(SignView sign) {
+		SignInfo info = sign.getData();
+		if (mData.getBitmap().equals(info.getBitmap())) {
+			int dx = (int) Math.abs(info.getX() - mData.getX());
+			int dy = (int) Math.abs(info.getY() - mData.getY());
+			boolean correct = (dx <= SIGN_XY_RANGE && dy <= SIGN_XY_RANGE);
+			if(correct) {
+				mData.setCorrect(correct);
+				info.setCorrect(correct);
+			}
+			Log.d(TAG, "compareSign dx:" + dx + ",dy:" + dy + ",correct:" + correct);
+			return true;
+		} else {
+			Log.e(TAG, "compareSign ignore..");
+			return false;
+		}
 	}
 
 	/**
@@ -336,6 +367,16 @@ public class SignView extends ImageView implements IScaleable {
 				setImageBitmap(mBitmap);
 			}
 		}
+	}
+
+	/**
+	 * 图片设置为灰色模式，主要用于答错时的显示
+	 */
+	public void setGrayMode() {
+		ColorMatrix matrix = new ColorMatrix();
+		matrix.setSaturation(0);// 饱和度 0灰色 100过度彩色，50正常
+		ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
+		setColorFilter(filter);
 	}
 
 	@Override

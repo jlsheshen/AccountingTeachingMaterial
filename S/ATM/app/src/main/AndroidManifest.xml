@@ -41,6 +41,7 @@
             android:name=".activity.PdfActivity"
             android:screenOrientation="landscape" />
 
+
         <meta-data
             android:name="design_width"
             android:value="1024"></meta-data>

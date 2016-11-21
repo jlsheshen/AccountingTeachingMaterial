@@ -1,0 +1,56 @@
+10
+
+dir
+0
+svn://192.168.1.157/chengyuan/ATM/BillLib/src/main/java/com/edu/subject/bill/info
+svn://192.168.1.157/chengyuan
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+cb5a131d-ae02-486f-b5f7-bb3f309dc133
+
+BaseElementInfo.java
+file
+
+
+
+add
+
+BlankInfo.java
+file
+
+
+
+add
+
+FlashInfo.java
+file
+
+
+
+add
+
+SignInfo.java
+file
+
+
+
+add
+

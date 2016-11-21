@@ -57,13 +57,30 @@ public class BillView extends RelativeLayout implements ISubject, BillZoomListen
 	private TestBillData mData;
 	// 是否用于分组单据
 	private boolean isGroup;
+	// 是否初始化
+	private boolean inited;
+	private SubjectListener mListener;
 
 	public BillView(Context context, TestBillData data) {
 		super(context);
-		View.inflate(context, R.layout.layout_bill_view, this);
+
+		View.inflate(context, R.layout.loading_layout, this);
 		mContext = context;
 		mData = data;
-		init();
+	}
+
+	/**
+	 * 用于延迟加载，当界面显示时再加载
+	 */
+	public void onVisible() {
+		if (!inited) {
+			removeAllViews();
+			View.inflate(mContext, R.layout.layout_bill_view, this);
+			init();
+			billView.setSubjectListener(mListener);
+		}
+		requestDefaultFocus();
+		inited = true;
 	}
 
 	/**
@@ -119,6 +136,8 @@ public class BillView extends RelativeLayout implements ISubject, BillZoomListen
 			tvErrorCount.setVisibility(View.VISIBLE);
 			switchAnswer.setVisibility(View.VISIBLE);
 			tvErrorCount.setText("错误" + mData.getSubjectData().getErrorCount() + "次");
+			btnShowUser.setBackgroundResource(R.drawable.btn_switch_green);
+			btnShowRight.setBackgroundResource(R.drawable.btn_transparent);
 		} else {
 			tvErrorCount.setVisibility(View.GONE);
 			switchAnswer.setVisibility(View.GONE);
@@ -224,29 +243,39 @@ public class BillView extends RelativeLayout implements ISubject, BillZoomListen
 
 	@Override
 	public void saveAnswer() {
-		billView.saveAnswer();
+		if (inited) {
+			billView.saveAnswer();
+		}
 	}
 
 	@Override
 	public float submit() {
-		showSwitch(true);
-		return billView.submit();
+		if (inited) {
+			showSwitch(true);
+			return billView.submit();
+		} else {
+			return mData.getuScore();
+		}
 	}
 
 	@Override
 	public void showDetails() {
-		billView.showDetails();
+		if (inited) {
+			billView.showDetails();
+		}
 	}
 
 	@Override
 	public void reset() {
-		showSwitch(false);
-		billView.reset();
+		if (inited) {
+			showSwitch(false);
+			billView.reset();
+		}
 	}
 
 	@Override
 	public void setSubjectListener(SubjectListener listener) {
-		billView.setSubjectListener(listener);
+		mListener = listener;
 	}
 
 	/**

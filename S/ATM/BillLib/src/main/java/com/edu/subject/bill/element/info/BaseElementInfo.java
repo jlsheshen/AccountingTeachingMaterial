@@ -1,12 +1,14 @@
 package com.edu.subject.bill.element.info;
 
+import java.io.Serializable;
+
 /**
  * 单据中各种元素数据封装基类,目前元素包括：底图，空，印章
  * 
  * @author lucher
  * 
  */
-public abstract class BaseElementInfo {
+public abstract class BaseElementInfo implements Serializable {
 	// 空对应的id
 	private int id;
 	// x坐标

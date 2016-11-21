@@ -12,6 +12,7 @@ import com.edu.subject.TestMode;
  */
 public abstract class BaseTestData extends BaseData implements IbaseTestData {
 
+
     // 问题显示的index
     protected String subjectIndex;
     // 预置标识
@@ -119,5 +120,6 @@ public abstract class BaseTestData extends BaseData implements IbaseTestData {
     public void setState(int state) {
         this.state = state;
     }
+
 
 }

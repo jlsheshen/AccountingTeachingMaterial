@@ -127,7 +127,13 @@ public class SingleSelectView extends BaseScrollView implements ISubject, OnClic
 
 	@Override
 	public void onClick(View v) {
-
+//		switch (v.getId()) {
+//		case R.id.tv_subject_type:
+//
+//			break;
+//		default:
+//			break;
+//		}
 	}
 
 	@Override

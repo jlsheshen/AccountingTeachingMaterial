@@ -128,12 +128,15 @@ public class BillAnswerHandler {
 
 	/**
 	 * 判断正误
-	 * @param submit 是否提交
+	 * 
+	 * @param submit
+	 *            是否提交
 	 */
 	private void judgeAnswer(boolean submit) {
-		float totalScore = 0;
-		totalScore += judgeBlanks(submit);
-		totalScore += judgeSigns();
+		// 算分方法：对每个空进行答案判断，如果答错，从总分里减去答错空的分值，直到总分小于或等于0
+		float totalScore = mTestData.getSubjectData().getScore();
+		totalScore -= judgeBlanks(submit);
+		totalScore -= judgeSigns(submit);
 		Log.d(TAG, mTestData.getSubjectIndex() + ",totalScore:" + totalScore);
 		mTestData.setuScore(Math.max(0, totalScore));
 	}
@@ -143,11 +146,11 @@ public class BillAnswerHandler {
 	 * 
 	 * @param submit
 	 * 
-	 * @return
+	 * @return 返回需要扣除的分数
 	 */
 	private float judgeBlanks(boolean submit) {
-		// 算分方法：对每个空进行答案判断，如果答错，从总分里减去答错空的分值，直到总分小于或等于0
-		float totalScore = mTestData.getSubjectData().getScore();
+		// 记录需要扣的分数
+		float totalScore = 0;
 		// 答案拼接
 		StringBuilder builder = new StringBuilder();
 		int index = 0;
@@ -159,8 +162,8 @@ public class BillAnswerHandler {
 			etBlank.judge(submit);
 			BlankInfo data = etBlank.getData();
 			if (!data.isRight() && !isGroupBlank(data.getType())) {// 对于分组类的分数不在此处计算
-				totalScore -= data.getScore();
-				Log.e(TAG, "totalscore:" + totalScore + ",score:" + data.getScore());
+				totalScore += data.getScore();
+				Log.e(TAG, "blank 扣除分数：" + totalScore + "," + data);
 			}
 			// 拼接用户答案
 			String uAnswer = data.getuAnswer().trim();
@@ -187,7 +190,8 @@ public class BillAnswerHandler {
 				tmpScore += blank.getData().getScore();
 			}
 			if (!right) {
-				totalScore -= tmpScore;
+				totalScore += tmpScore;
+				Log.e(TAG, "blank组 扣除分数：" + totalScore);
 			}
 		}
 
@@ -200,28 +204,53 @@ public class BillAnswerHandler {
 	 * 计算印章分数
 	 * 
 	 * @param submit
-	 * 
 	 * @return
 	 */
-	private float judgeSigns() {
+	private float judgeSigns(boolean submit) {
+		// 记录需要扣的分数
 		float totalScore = 0;
 		// 对印章控件进行判断
 		if (mSignViews != null) {
-			// 答案拼接
-			StringBuilder builder = new StringBuilder();
-			int index = 0;
+			// 印章分类
+			List<SignView> correctSignViews = new ArrayList<SignView>(mSignViews.size());
+			List<SignView> userSignViews = new ArrayList<SignView>(mSignViews.size());
 			for (SignView sign : mSignViews) {
 				SignInfo info = sign.getData();
 				if (info.isUser()) {// 用户添加的印章
-					String uAnswer = info.getId() + SubjectConstant.SEPARATOR_SIGN_INFO + info.getX() + SubjectConstant.SEPARATOR_SIGN_INFO + info.getY();
-					if (index == 0) {
-						builder.append(uAnswer);
-					} else {
-						builder.append(SubjectConstant.SEPARATOR_ITEM + uAnswer);
-					}
-					index++;
+					userSignViews.add(sign);
+				} else {
+					correctSignViews.add(sign);
 				}
 			}
+			int index = 0;
+			// 答案对比,答案拼接，得分计算
+			StringBuilder builder = new StringBuilder();
+			for (SignView uSign : userSignViews) {
+				for (SignView sign : correctSignViews) {
+					if (!sign.getData().isCorrect()) {
+						uSign.compareSign(sign);
+					}
+				}
+				SignInfo info = uSign.getData();
+				if (submit && !info.isCorrect()) {// 如果回答错误，变为灰色模式
+					uSign.setGrayMode();
+				}
+				String uAnswer = info.getId() + SubjectConstant.SEPARATOR_SIGN_INFO + info.getX() + SubjectConstant.SEPARATOR_SIGN_INFO + info.getY() + SubjectConstant.SEPARATOR_SIGN_INFO
+						+ info.isCorrect();
+				if (index == 0) {
+					builder.append(uAnswer);
+				} else {
+					builder.append(SubjectConstant.SEPARATOR_ITEM + uAnswer);
+				}
+				index++;
+			}
+			for (SignView sign : correctSignViews) {
+				if (!sign.getData().isCorrect()) {
+					totalScore += sign.getData().getScore();
+					Log.e(TAG, "sign 扣除分数：" + totalScore + "," + sign);
+				}
+			}
+
 			Log.d(TAG, "user sign:" + builder);
 			mTestData.setuSigns(builder.toString());
 		}

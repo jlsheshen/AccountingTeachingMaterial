@@ -55,13 +55,29 @@ public class GroupBillView extends RelativeLayout implements ISubject, OnChecked
 	private SlidingDragLayout slidingLayout;
 	// 图片查看控件
 	private PicBrowseView picBrowseView;
+	// 是否初始化
+	private boolean inited;
+	private SubjectListener mListener;
 
 	public GroupBillView(Context context, TestGroupBillData data) {
 		super(context);
-		View.inflate(context, R.layout.layout_group_bill_view, this);
+
+		View.inflate(context, R.layout.loading_layout, this);
 		mContext = context;
 		mData = data;
-		init();
+	}
+
+	/**
+	 * 用于延迟加载，当界面显示时再加载
+	 */
+	public void onVisible() {
+		if (!inited) {
+			removeAllViews();
+			View.inflate(mContext, R.layout.layout_group_bill_view, this);
+			init();
+		}
+		requestDefaultFocus();
+		inited = true;
 	}
 
 	/**
@@ -115,6 +131,7 @@ public class GroupBillView extends RelativeLayout implements ISubject, OnChecked
 			tabs.addView(radio);
 			// 初始化单据
 			BillView billView = new BillView(mContext, data);
+			billView.onVisible();
 			billView.setGroup();
 			billView.applyData(mData.getTestDatas().get(i));
 			billViews.add(billView);
@@ -220,7 +237,7 @@ public class GroupBillView extends RelativeLayout implements ISubject, OnChecked
 			// 用户答案印章拼接保存
 			String uAnswer = billView.getTestData().getuAnswer();
 			String uSign = billView.getTestData().getuSigns();
-			if (uAnswer.equals("")) {
+			if (uAnswer != null && uAnswer.equals("")) {
 				uAnswer = SubjectConstant.FLAG_NULL_STRING;
 			}
 			if (uSign == null || uSign.equals("")) {
@@ -265,7 +282,7 @@ public class GroupBillView extends RelativeLayout implements ISubject, OnChecked
 
 	@Override
 	public void setSubjectListener(SubjectListener listener) {
-		billViews.get(mCurrentIndex).setSubjectListener(listener);
+		mListener = listener;
 	}
 
 	@Override

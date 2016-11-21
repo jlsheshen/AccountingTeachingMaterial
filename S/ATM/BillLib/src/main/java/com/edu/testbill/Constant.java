@@ -11,5 +11,5 @@ public class Constant {
 	/**
 	 * 数据库名称
 	 */
-	public static final String DATABASE_NAME = "EduBillView.db";
+	public static final String DATABASE_NAME = "AccountingTeaching.db";
 }

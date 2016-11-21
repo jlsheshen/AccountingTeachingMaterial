@@ -36,7 +36,7 @@ import java.util.Arrays;
 public class BlankEditText extends EditText implements IScaleable {
 
 	// 背景色-正常-灰色
-	private static int BG_COLOR_NORMAL = 0x55000000;
+	private static int BG_COLOR_NORMAL = 0x33000000;
 	// 背景色-获取焦点
 	private static int BG_COLOR_FOCUSED = 0x992e92e3;
 	// 背景色-正确-蓝色
@@ -121,10 +121,9 @@ public class BlankEditText extends EditText implements IScaleable {
 	 * 设置输入方式
 	 */
 	private void setInputType() {
-		if (!mData.isEditable()) {
-			return;
-		}
-		InputFilter[] filters;
+//		if (!mData.isEditable()) {
+//			return;
+//		}
 		switch (mData.getType()) {
 		case ElementType.TYPE_DATE_UPPER:
 		case ElementType.TYPE_NORMAL_CENTER:
@@ -141,16 +140,14 @@ public class BlankEditText extends EditText implements IScaleable {
 				if (length != 4) {
 					length = 2;
 				}
-				filters = new InputFilter[] { new LengthFilter(length) };
-				setFilters(filters);
+				setFilters(new InputFilter[] { new LengthFilter(length) });
 			}
 
 			break;
 		case ElementType.TYPE_AMOUNT_LOWER_COMMA:
 			setGravity(Gravity.CENTER);
 			addTextChangedListener(new CashierWatcher());
-			filters = new InputFilter[] { new LengthFilter(18) };
-			setFilters(filters);
+			setFilters(new InputFilter[] { new LengthFilter(18)});
 
 			break;
 		case ElementType.TYPE_AMOUNT_LOWER_SEP:

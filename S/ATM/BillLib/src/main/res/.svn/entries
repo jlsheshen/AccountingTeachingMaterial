@@ -1,0 +1,65 @@
+10
+
+dir
+10709
+svn://192.168.1.157/chengyuan/ATM/BillLib/src/main/res
+svn://192.168.1.157/chengyuan
+
+
+
+2016-11-21T09:39:58.090075Z
+10709
+jilin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+cb5a131d-ae02-486f-b5f7-bb3f309dc133
+
+
+
+
+
+
+0
+
+drawable
+dir
+
+layout
+dir
+
+mipmap-hdpi
+dir
+
+mipmap-mdpi
+dir
+
+mipmap-xhdpi
+dir
+
+mipmap-xxhdpi
+dir
+
+mipmap-xxxhdpi
+dir
+
+raw
+dir
+
+values
+dir
+
+values-w820dp
+dir
+

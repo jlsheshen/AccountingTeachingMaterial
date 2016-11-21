@@ -5,6 +5,8 @@ import android.os.CountDownTimer;
 
 import com.edu.accountingteachingmaterial.R;
 import com.edu.accountingteachingmaterial.base.BaseActivity;
+import com.edu.library.util.DBCopyUtil;
+import com.edu.testbill.Constant;
 
 
 public class LaunchActivity extends BaseActivity{
@@ -73,6 +75,9 @@ public class LaunchActivity extends BaseActivity{
 			@Override
 			public void onTick(long millisUntilFinished) {
 				// TODO Auto-generated method stub
+				// 检测数据库是否已拷贝
+				DBCopyUtil fileCopyUtil = new DBCopyUtil(LaunchActivity.this);
+				fileCopyUtil.checkDBVersion(Constant.DATABASE_NAME);
 
 			}
 			@Override

@@ -1,9 +1,11 @@
 package com.edu.accountingteachingmaterial.fragment;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
 
 import com.edu.accountingteachingmaterial.R;
+import com.edu.accountingteachingmaterial.activity.ExamTestActivity;
 import com.edu.accountingteachingmaterial.adapter.ExerciseExLvAdapter;
 import com.edu.accountingteachingmaterial.base.BaseFragment;
 import com.edu.accountingteachingmaterial.bean.ExerciseBean;
@@ -37,7 +39,14 @@ public class ClassExerciseFragment extends BaseFragment {
         ExerciseExLvAdapter adapter = new ExerciseExLvAdapter(context);
         adapter.setDatas(datas);
         expandableListView.setAdapter(adapter);
-
+        expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
+                Log.d("ClassExerciseFragment", "点击确认");
+                startActivity(ExamTestActivity.class);
+                return false;
+            }
+        });
     }
 
     private void loadDatas() {

@@ -2,8 +2,6 @@ package com.edu.subject.bill.element.info;
 
 import com.edu.subject.bill.element.ElementType;
 
-import android.graphics.Bitmap;
-
 /**
  * 对应印章的数据
  * 
@@ -16,6 +14,8 @@ public class SignInfo extends BaseElementInfo {
 	private boolean user;
 	// 印章图片
 	private String bitmap;
+	//是否正确
+	private boolean correct;
 
 	public SignInfo() {
 
@@ -47,6 +47,14 @@ public class SignInfo extends BaseElementInfo {
 
 	public void setUser(boolean user) {
 		this.user = user;
+	}
+
+	public boolean isCorrect() {
+		return correct;
+	}
+
+	public void setCorrect(boolean correct) {
+		this.correct = correct;
 	}
 
 }

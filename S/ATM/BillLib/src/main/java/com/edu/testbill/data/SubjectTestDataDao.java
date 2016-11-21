@@ -1,8 +1,5 @@
 package com.edu.testbill.data;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -29,6 +26,9 @@ import com.edu.subject.data.TestBillData;
 import com.edu.subject.data.TestGroupBillData;
 import com.edu.testbill.Constant;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 测试数据数据库操作dao层
  * 
@@ -37,7 +37,12 @@ import com.edu.testbill.Constant;
  */
 public class SubjectTestDataDao extends BaseDataDao {
 
-	private static final String TAG = "SubjectTestDataDao";
+	//题目类型
+	public static final String SUBJECT_ID = "SUBJECT_ID";
+	//试卷类型
+	public static final String FLAG = "FLAG";
+
+
 
 	// 用户答案
 	public static final String UANSWER = "UANSWER";
@@ -47,6 +52,12 @@ public class SubjectTestDataDao extends BaseDataDao {
 	public static final String USCORE = "USCORE";
 	// 题目状态
 	public static final String STATE = "STATE";
+	//题目类型
+	public static final String SUBJECT_TYPE = "SUBJECT_TYPE";
+	//REMARK
+	public static final String REMARK = "REMARK";
+
+
 
 	/**
 	 * 自身引用
@@ -59,7 +70,7 @@ public class SubjectTestDataDao extends BaseDataDao {
 
 	@Override
 	public void setTableName() {
-		TABLE_NAME = "TB_SUBJECT_TEST";
+		TABLE_NAME = "TB_TEST";
 	}
 
 	/**
@@ -122,7 +133,12 @@ public class SubjectTestDataDao extends BaseDataDao {
 	private BaseTestData initTestData(Cursor curs, int testMode) {
 		BaseTestData testData = null;
 		BaseSubjectData subjectData = null;
-		int subjectType = curs.getInt(2);
+		int subjectType = curs.getInt(curs.getColumnIndex(SUBJECT_TYPE));
+		Log.d(TAG, "subjectType:" + subjectType);
+
+		if (subjectType == 4){
+			Log.d(TAG, "subjectType:" + subjectType);
+		}
 
 		switch (subjectType) {
 		case SubjectType.SUBJECT_GROUP_BILL:
@@ -175,9 +191,13 @@ public class SubjectTestDataDao extends BaseDataDao {
 			}
 
 			break;
+			case SubjectType.SUBJECT_ENTRY:
+
 
 		case SubjectType.SUBJECT_SINGLE:
+
 		case SubjectType.SUBJECT_MULTI:
+
 		case SubjectType.SUBJECT_JUDGE:
 			// 初始化测试数据
 			testData = new TestBasicData();
@@ -203,11 +223,11 @@ public class SubjectTestDataDao extends BaseDataDao {
 	 * @param data
 	 */
 	public void parseCursor(Cursor curs, BaseTestData data) {
-		data.setId(curs.getInt(0));
-		data.setFlag(curs.getInt(1));
-		data.setSubjectType(curs.getInt(2));
-		data.setSubjectId(curs.getInt(3));
-		data.setRemark(curs.getString(8));
+		data.setId(curs.getInt(curs.getColumnIndex("ID")));
+		data.setFlag(curs.getInt(curs.getColumnIndex(FLAG)));
+		data.setSubjectType(curs.getInt(curs.getColumnIndex(SUBJECT_TYPE)));
+		data.setSubjectId(curs.getInt(curs.getColumnIndex(SUBJECT_ID)));
+		data.setRemark(curs.getString(curs.getColumnIndex(REMARK)));
 		if (data.getTestMode() == TestMode.MODE_EXAM) {// 测试模式不加载用户数据
 			data.setuAnswer(null);
 			data.setuScore(0);
@@ -216,11 +236,11 @@ public class SubjectTestDataDao extends BaseDataDao {
 				((TestBillData) data).setuSigns(null);
 			}
 		} else {
-			data.setuAnswer(curs.getString(4));
-			data.setuScore(curs.getInt(6));
-			data.setState(curs.getInt(7));
+			data.setuAnswer(curs.getString(curs.getColumnIndex(UANSWER)));
+			data.setuScore(curs.getInt(curs.getColumnIndex(USCORE)));
+			data.setState(curs.getInt(curs.getColumnIndex(STATE)));
 			if (data.getSubjectType() == SubjectType.SUBJECT_BILL) {
-				((TestBillData) data).setuSigns(curs.getString(5));
+				((TestBillData) data).setuSigns(curs.getString(curs.getColumnIndex(USIGNS)));
 			}
 		}
 	}
@@ -233,11 +253,11 @@ public class SubjectTestDataDao extends BaseDataDao {
 	 * @param index
 	 */
 	public void parseCursor(Cursor curs, BaseTestData data, int index) {
-		data.setId(curs.getInt(0));
-		data.setFlag(curs.getInt(1));
-		data.setSubjectType(curs.getInt(2));
-		data.setSubjectId(curs.getInt(3));
-		data.setRemark(curs.getString(8));
+		data.setId(curs.getInt(curs.getColumnIndex("ID")));
+		data.setFlag(curs.getInt(curs.getColumnIndex(FLAG)));
+		data.setSubjectType(curs.getColumnIndex(SUBJECT_TYPE));
+		data.setSubjectId(curs.getInt(curs.getColumnIndex(SUBJECT_ID)));
+		data.setRemark(curs.getString(curs.getColumnIndex(REMARK)));
 		if (data.getTestMode() == TestMode.MODE_EXAM) {// 测试模式不加载用户数据
 			data.setuAnswer(null);
 			data.setuScore(0);
@@ -248,15 +268,15 @@ public class SubjectTestDataDao extends BaseDataDao {
 				((TestGroupBillData) data).setuSigns(null);
 			}
 		} else {
-			data.setuScore(curs.getInt(6));
-			data.setState(curs.getInt(7));
+			data.setuScore(curs.getInt(curs.getColumnIndex(USCORE)));
+			data.setState(curs.getInt(curs.getColumnIndex(STATE)));
 			if (index == -1) {// group
-				((TestGroupBillData) data).setuSigns(curs.getString(5));
-				data.setuAnswer(curs.getString(4));
+				((TestGroupBillData) data).setuSigns(curs.getString(curs.getColumnIndex(USIGNS)));
+				data.setuAnswer(curs.getString(curs.getColumnIndex(UANSWER)));
 			} else {
 				// 解析对应单据的用户答案
-				String answer = curs.getString(4);
-				String sign = curs.getString(5);
+				String answer = curs.getString(curs.getColumnIndex(UANSWER));
+				String sign = curs.getString(curs.getColumnIndex(USIGNS));
 				if (answer != null && !answer.equals("")) {
 					String[] answers = answer.split(SubjectConstant.SEPARATOR_GROUP);
 					data.setuAnswer(answers[index]);
@@ -304,7 +324,7 @@ public class SubjectTestDataDao extends BaseDataDao {
 	/**
 	 * 批量更新测试数据
 	 * 
-	 * @param datad
+	 * @param datas
 	 */
 	public synchronized void updateTestDatas(List<BaseTestData> datas) {
 		try {
@@ -331,6 +351,7 @@ public class SubjectTestDataDao extends BaseDataDao {
 			closeDb(mDb);
 		}
 	}
+
 
 	@Override
 	public BaseTestData parseCursor(Cursor curs) {

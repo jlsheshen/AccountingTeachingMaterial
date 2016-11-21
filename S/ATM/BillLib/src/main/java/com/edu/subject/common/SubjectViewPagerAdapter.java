@@ -255,11 +255,21 @@ public class SubjectViewPagerAdapter extends FragmentPagerAdapter {
 	 * 
 	 * @param index
 	 */
-	public void saveAnswer(int index) {
-		mPagerList.get(index).saveAnswer();
-		if (mSubjectList.get(index).getState() == SubjectState.STATE_INIT) {
-			mSubjectList.get(index).setState(SubjectState.STATE_UNFINISH);
-		}
-		SubjectTestDataDao.getInstance(mContext).updateTestData(mSubjectList.get(index));
+	public void saveAnswer(final int index) {
+		new Runnable() {
+			@Override
+			public void run() {
+				Log.i(TAG, "save answer start:" + index);
+				if (mSubjectList.get(index).getState() == SubjectState.STATE_CORRECT || mSubjectList.get(index).getState() == SubjectState.STATE_WRONG) {
+					return;
+				}
+				mPagerList.get(index).saveAnswer();
+				if (mSubjectList.get(index).getState() == SubjectState.STATE_INIT) {
+					mSubjectList.get(index).setState(SubjectState.STATE_UNFINISH);
+				}
+				SubjectTestDataDao.getInstance(mContext).updateTestData(mSubjectList.get(index));
+				Log.i(TAG, "save answer over:" + index);
+			}
+		}.run();
 	}
 }
